@@ -7,9 +7,8 @@ app.use(bodyParser.json());
 const db = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "",
-  port: "3306",
-  database: "testsqldatabase",
+  password: "imdereton_55",
+  database: "nodejsmysql_database",
 });
 
 db.connect((err) => {
@@ -17,18 +16,18 @@ db.connect((err) => {
   console.log(" mysql connected");
 });
 
-app.get("/", (req, res) => {
-  res.send("hello working");
-  console.log("hiiii");
-});
-app.get("/createdb", (req, res) => {
-  let sql = "CREATE DATABASE testsqldatabase";
-  db.query(sql, (err, result) => {
-    if (err) throw err;
-    res.send("database created");
-    console.log(result);
-  });
-});
+// app.get("/", (req, res) => {
+//   res.send("hello working");
+//   console.log("hiiii");
+// });
+// app.get("/createdb", (req, res) => {
+//   let sql = "CREATE DATABASE testsqldatabase";
+//   db.query(sql, (err, result) => {
+//     if (err) throw err;
+//     res.send("database created");
+//     console.log(result);
+//   });
+// });
 
 app.get("/createtable", (req, res) => {
   let sql =
