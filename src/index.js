@@ -17,6 +17,10 @@ db.connect((err) => {
   console.log(" mysql connected");
 });
 
+app.get("/", (req, res) => {
+  res.send("hello working");
+  console.log("hiiii");
+});
 app.get("/createdb", (req, res) => {
   let sql = "CREATE DATABASE testsqldatabase";
   db.query(sql, (err, result) => {
